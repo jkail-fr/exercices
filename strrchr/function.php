@@ -77,30 +77,33 @@ function strrchr3 ($variable)
     else // Si c'est une string on continue
     {
         $taille=strlen($variable); //on récupère la longueur de la chaine à chercher
-        $i=0;
-        while ($i<=$taille)
+        if ($taille>0)
         {
-            $characArray=str_split($variable, $taille);
-
-            foreach($characArray as $recherche);
+            $i=0;
+            while ($i<=$taille)
             {
-                $count=0;
-                if ($charac == $recherche)
+                $characArray=str_split($variable, $taille);
+
+                foreach($characArray as $recherche);
                 {
-                    $count++;
+                    $count=0;
+                    if ($charac == $recherche)
+                    {
+                        $count++;
+                    }
+                    else
+                    {
+                        $result=$count;
+                        $count++;
+                    }
                 }
-                else
-                {
-                    $result=$count;
-                    $count++;
-                }
+                return($result);
+                $i++;
             }
-            return($result);
-            $i++;
         }
         else
         {
-            return(FALSE);
+        return(FALSE);
         }
     }
 }
