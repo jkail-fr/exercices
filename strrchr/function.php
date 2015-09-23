@@ -23,7 +23,7 @@ sinon explode pour faire un array et trouver le caractere dans l'array
 
 
 
-function strrchr2 ($variable)
+function strrchr2 ($variable,$search)
 
     //ce code ne marche pas car si la chaine est sur 2 entrées de l'array ca ne fonctionne pas
 {
@@ -42,7 +42,7 @@ function strrchr2 ($variable)
             foreach($characArray as $recherche);
             {
                 $count=0;
-                if ($charac == $recherche)
+                if ($charac != $recherche)
                 {
                     $count++;
                 }
@@ -62,49 +62,4 @@ function strrchr2 ($variable)
 
 }
 
-
-//Version avec boucle
-
-function strrchr3 ($variable)
-
-    //ce code ne marche pas car si la chaine est sur 2 entrées de l'array ca ne fonctionne pas
-{
-    $type=gettype($variable); //on récupère le type de la variable, si ca n'est pas string, on renvoie FALSE
-    if ($type!="string")
-    {
-        return(FALSE);
-    }
-    else // Si c'est une string on continue
-    {
-        $taille=strlen($variable); //on récupère la longueur de la chaine à chercher
-        if ($taille>0)
-        {
-            $i=0;
-            while ($i<=$taille)
-            {
-                $characArray=str_split($variable, $taille);
-
-                foreach($characArray as $recherche);
-                {
-                    $count=0;
-                    if ($charac == $recherche)
-                    {
-                        $count++;
-                    }
-                    else
-                    {
-                        $result=$count;
-                        $count++;
-                    }
-                }
-                return($result);
-                $i++;
-            }
-        }
-        else
-        {
-        return(FALSE);
-        }
-    }
-}
 ?>
