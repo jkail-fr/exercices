@@ -21,5 +21,37 @@ Alright guys let's do this !
 */
 
 
+function fillWithZero ($string,$lenght)
+{
+    if (isset($string) AND isset($lenght) AND gettype($lenght)=="integer" AND gettype($string)=="string") // on vérifie que les variables existent et on verifie que $lenght est bien numerique et que $string est bien une string ,ca aide
+    {
+        $size = strlen($string);
+        if ($size >= $lenght)
+        {
+            return($string);
+        }
+        else
+        {
+            $size=$lenght-$size;
+		$i="0";
+		$add="0";
+		while (i<size)
+        {
+            $add="0".$add;
+            $i++;
+        }
+		$result=$add.$string;
+		return($result);
+		}
+
+    }
+    else
+    {
+        echo 'Il manque une variable';
+    }
+
+    echo fillWithZero(12,4); // C'est supposé renvoyé 0012
+
+}
 
 ?>
