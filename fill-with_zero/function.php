@@ -26,6 +26,7 @@ function fillWithZero ($string,$lenght)
     if (isset($string) AND isset($lenght) /*AND gettype($lenght)=="integer" AND gettype($string)=="string"*/) // on vérifie que les variables existent et on verifie que $lenght est bien numerique et que $string est bien une string ,ca aide
     {
         $size = strlen($string);
+        var_dump($size,$lenght,$string);
         if ($size >= $lenght)
         {
             return($string);
@@ -41,9 +42,9 @@ function fillWithZero ($string,$lenght)
             $i++;
         }
 		$result=$add.$string;
-		return($result);
-		}
 
+		}
+        return($result);
     }
     else
     {
