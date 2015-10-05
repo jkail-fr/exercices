@@ -11,20 +11,11 @@
 3 pour chaque caractère qiui ne correspond pas, on incrément une variable de 1. Dès qu'on trouve ce caractere, on stocke la valeur dans une autre variable et on incremente la première.
 4 si on ne trouve pas l'élément recherché, alors on renvoi soit "0" soit false
 
-ici $variable = la chaine de caractère à charcher (le haystack) et $charac la chaine à rechercher (needle)
-
-voir usage de chr, ssxanf, str_split....sinon enchainement de strrev et de strpos
-sinon explode pour faire un array et trouver le caractere dans l'array
-
-
--> essayer de rempalcer la ligne 41 par une boucle, ca sera plus efficace
 
 
 Idée hgbiale, on va utiliser strstr, strrev et strlen pour trouver tout ca, comme ca pas d'imploe ou d'explode  !!
 
 */
-
-
 
 function strrchr2 ($variable,$search)
 
@@ -37,32 +28,17 @@ function strrchr2 ($variable,$search)
     }
     else // Si c'est une string on continue
     {
-        $taille=strlen($variable); //on récupère la longueur de la chaine à chercher
-        if ($taille>0)
-        {
-            $characArray=str_split($variable, $taille);
-
-            foreach($characArray as $recherche);
-            {
-                $count=0;
-                if ($charac != $recherche)
-                {
-                    $count++;
-                }
-                else
-                {
-                    $result=$count;
-                    $count++;
-                }
-            }
+        //on inverse les variables
+        $variable=strev($variable);
+        $search=strev($search);
+        $maxSize=strlen($variable);
+        $size=strlen($search);
+        $revSearch=strstr($variable,$search);
+        $result=$maxSize-$revSearch+1;
         return($result);
-        }
-       else
-        {
-            return(FALSE);
-        }
     }
 
 }
 
+echo strrchr2('h','recherche');
 ?>
