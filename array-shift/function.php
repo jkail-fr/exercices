@@ -13,9 +13,10 @@ function array_shift($array)
             $resultat=$entrees;
             unset($array[$i]);
             $i++;
+
         }
+        return $resultat;
     }
-    return $resultat;
 }
 
 $arraytest=array('tata','titi','toto'); /* bon si j'ai pas fait n'importe quoi c'est supposé tata dans une autre variable et l'array commence avec titi*/
