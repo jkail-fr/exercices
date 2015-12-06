@@ -6,7 +6,7 @@ Cette fonction doit sorir la première entrée d'un array et la stocker dans une n
 function array_shift($array)
 {
     $i=0;
-    while ($i<2)
+    while($i<2)
     {
         foreach($array as $entrees)
         {
@@ -15,11 +15,11 @@ function array_shift($array)
             $i++;
         }
     }
-    return($resultat);
+    return $resultat;
 }
 
 $arraytest=array('tata','titi','toto'); /* bon si j'ai pas fait n'importe quoi c'est supposé tata dans une autre variable et l'array commence avec titi*/
-echo array_shift($arraytest);
+array_shift($arraytest);
 echo $resultat;
 
 ?>
