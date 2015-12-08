@@ -21,7 +21,7 @@ function myarray_shift($array)
 
 $arraytest=array('tata','titi','toto'); /* bon si j'ai pas fait n'importe quoi c'est supposé tata dans une autre variable et l'array commence avec titi*/
 myarray_shift($arraytest);
-var_dump ($resultat);
+var_dump ($arraytest,$resultat);
 
 ?>
 
